@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGM-TASK-4</title>
+    <style>
+        body{
+            background-image: url("IMG9.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .con1{
+            width: 500px;
+            margin-left: 500px;
+            margin-right: 400px;
+        }
+        .heading{
+            text-align: center;
+            color: crimson;
+            background-color: #F9D923;
+            font-size: 35px;
+            font-style: italic;
+        }
+        .con2{
+            margin: 110px;
+            margin-left: 550px;
+            width: 425px;
+            height: 350px;
+            border: 2px solid silver;
+            border-radius:10px;
+            padding: 10px;
+        }
+        .button{
+            cursor: pointer;
+            display: inline-block;
+            margin: 2px;
+            
+            margin-left: 10px;
+            margin-top: 15px;
+            width: 80px;
+            height: 42px;
+            font-weight: bold;
+            border-radius: 10px;
+            outline: none;
+            font-size: large;
+        }
+        .button:active{
+            box-shadow: 0 2px lightseagreen ;
+            transform: translate3d(4px);
+        }
+        .button:hover{
+            background-color:lightpink;
+        }
+        .equalbutton{
+            cursor: pointer;
+            display: inline-block;
+            margin: 2px;
+            padding: 12px 20px;
+            margin-left: 10px;
+            margin-top: 15px;
+            width: 80px;
+            height: 42px;
+            font-weight: bold;
+            border-radius: 20px;
+            outline: none;
+            background-color:forestgreen;
+        }
+        .equalbutton:active{
+            box-shadow: 0 2px lightseagreen ;
+            transform: translate3d(4px);
+        }
+        .equalbutton:hover{
+            background-color:lightpink;
+        }
+        .allclr{
+            cursor: pointer;
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            margin-top: 15px;
+            font-weight: bolder;
+            border-radius: 12px;
+            outline: none;
+            text-align: center;
+            background-color: blueviolet;
+        }
+        .allclr:active{
+            box-shadow: 0 2px  coral;
+            transform: translateX(4px);
+        }
+        .allclr:hover{
+            background-color:cornflowerblue;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px 20px;
+            margin-left: 10px;
+            margin-top: 15px;
+            display: inline-block;
+            border: 3px solid lightgreen;
+            border-radius: 8px;
+            color: black;
+            font-weight: bolder;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con1">
+        <h1 class="heading">CALCULATOR</h1>
+    </div>
+        <div class="con2">
+            <table class="calculator">
+                <tr>
+                    <td colspan="3"><input type="text" class="display_result" id="res"></td>
+                    <td><input type="button" class="allclr" value="AC" onclick="CLRSCR()"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="7" onclick="getnum('7')"></td>
+                    <td><input type="button" class="button" value="8" onclick="getnum('8')"></td>
+                    <td><input type="button" class="button" value="9" onclick="getnum('9')"></td>
+                    <td><input type="button" class="button" value="+" onclick="getnum('+')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="4" onclick="getnum('4')"></td>
+                    <td><input type="button" class="button" value="5" onclick="getnum('5')"></td>
+                    <td><input type="button" class="button" value="6" onclick="getnum('6')"></td>
+                    <td><input type="button" class="button" value="-" onclick="getnum('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="1" onclick="getnum('1')"></td>
+                    <td><input type="button" class="button" value="2" onclick="getnum('2')"></td>
+                    <td><input type="button" class="button" value="3" onclick="getnum('3')"></td>
+                    <td><input type="button" class="button" value="*" onclick="getnum('*')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="0" onclick="getnum('0')"></td>
+                    <td><input type="button" class="button" value="." onclick="getnum('.')"></td>
+                    <td><input type="button" class="button" value="/" onclick="getnum('/')"></td>
+                    <td><input type="button" class="equalbutton" value="=" onclick="calculate()"></td>
+                </tr>
+            </table>
+        </div>
+    <script>
+        function CLRSCR(){
+            document.getElementById("res").value = "";
+        }
+        function getnum(val){
+            document.getElementById("res").value += val ;
+        }
+        function calculate() {
+            var p = document.getElementById("res").value;
+            var q = eval(p);
+            document.getElementById("res").value = q;
+        }
+    </script>
+</body>
+</html>
